@@ -1,9 +1,11 @@
-import React from 'react';
-import { StyleSheet, View, Button, ScrollView } from 'react-native';
+import * as React from "react";
+import { StyleSheet, View, Button, ScrollView } from "react-native";
+import { connect, Dispatch } from "react-redux";
 
-// Components
-import { BookParagraph } from "./BookParagraph";
-import { BookTitle } from "./BookTitle";
+import { IState } from "./../reducers/RootReducer";
+
+import { BookParagraph } from "./../components/BookParagraph";
+import { BookTitle } from "./../components/BookTitle";
 
 export const BookChapterStyles = StyleSheet.create({
     root: {
@@ -22,7 +24,25 @@ export const BookChapterStyles = StyleSheet.create({
     },
 });
 
-export class BookChapter extends React.Component {
+interface IBookChapterContainer extends IBookChapterContainerStateProps, IBookChapterContainerDispatchProps {};
+
+interface IBookChapterContainerStateProps {};
+
+interface IBookChapterContainerDispatchProps {};
+
+let MapStateToProps = (state: IState) => {
+    return {
+        
+    };
+}
+
+let MapDispatchToProps = (dispatch: Dispatch<IState>) => {
+    return {
+
+    };
+}
+
+export class BookChapterContainer extends React.Component<IBookChapterContainer, {}> {
 
     constructor(props) {
         super(props);
@@ -33,12 +53,12 @@ export class BookChapter extends React.Component {
             <View style={BookChapterStyles.root}>
                 {/* WRITING */}
                 <ScrollView style={BookChapterStyles.__writing}>
-                    <BookTitle
+                    {/* <BookTitle
                         text={this.props.chapter.title}
                     />
                     <BookParagraph
                         text={this.props.chapter.text[0]}
-                    />
+                    /> */}
                 </ScrollView>
                 {/* CONTROLS */}
                 <View style={BookChapterStyles.__controls}>
@@ -51,3 +71,8 @@ export class BookChapter extends React.Component {
         );
     }
 }
+
+export default connect(
+    MapStateToProps,
+    MapDispatchToProps,
+)(BookChapterContainer);
