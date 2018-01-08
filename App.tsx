@@ -4,7 +4,7 @@ import { StyleSheet, View, Text } from "react-native";
 
 import { MakeStore } from "./Store";
 
-import BookChapterContainer from "./containers/BookChapterContainer";
+import BookContainer from "./containers/BookContainer";
 
 export default class App extends React.Component { 
 
@@ -17,7 +17,7 @@ export default class App extends React.Component {
         return (
             <Provider store={store}>
                 <View style={styles.container}>
-                    <BookChapterContainer/>
+                    <BookContainer/>
                 </View>
             </Provider>
         );

@@ -1,9 +1,14 @@
 export class CurrentBookState {
-    title: string = "";
-    chapters: Array<IBookChapter> = [];
-}
-
-export interface IBookChapter {
-    title: string;
-    text: Array<string>;
+    title: string = "Treasure Planet";
+    outline: Array<string> = [
+        "The sequel was to pick up where the first film left off, with Jim Hawkins going to the Royal Interstellar Academy. At the Academy, he is a hotshot “natural,” but he doesn’t follow the rules very well. Hence, he gets off to a shaky start – especially with his classmate Kate, who is very smart and has a type A personality. Kate’s father is Admiral Blake, the Commander of the Navy. Jim and Kate vie for top of the class but have very different skills.",
+        "Captain Amelia is dean of the Academy, which has a brand-new vessel: the Centurion. Designed by Doctor Doppler, the Centurion is the fastest ship in the galaxy. B.E.N. is its pilot.",
+        "The pirate Ironbeard desires to commandeer the Centurion. This ruthless villain is relatively all iron – almost nothing of whom he originally was, inside and out, is left. He leads a group of pirates to hijack the Centurion while Jim and Kate are aboard. The Navy can’t catch the Centurion, due to the vessel’s speed and armor. Jim and Kate escape the Centurion. Jim decides he needs a pirate to help catch pirates. They find his old buddy Long John Silver in the Lagoon Nebula, where he is running a smuggling ring. Silver agrees to help when he hears about the Centurion. Jim and Kate receive a tracking signal from B.E.N. – who is currently hostage aboard the Centurion – and follow via Silver’s creaky vessel. They discover the Centurion docked near the Botany Bay Prison Asteroid.",
+        "Ironbeard is using the Centurion to disable Botany Bay’s security systems. Jim, Kate and Silver sneak aboard the Centurion, where Silver reveals to Jim that he wants to take the Centurion for himself. He asks Jim to join him. Kate overhears this and is horrified, especially since the two have, of course, started falling for each other during the adventure.",
+        "Ironbeard discovers the intruders, charging into a fight in which Silver is injured. Meanwhile, the other pirates throw down ladders to the prison below, allowing swarms of elated prisoners to climb up into the ship. Silver, Jim, and Kate exit the Centurion amidst all the confusion. However, Ironbeard shoots down Silver’s ship. They plummet to the prison asteroid below, crash-landing.",
+        "Kate is angry at Jim and storms off. Jim is about to blow her off as well when Silver tells him to give her a chance. He reveals a part of his past through a flashback, when a young (non-cyborg) Silver screwed up a relationship with the love of his life – a decision which directly led to his life of piracy.",
+        "Silver has a very dangerous cargo with him that he had been trying to smuggle and sell for a fortune, which has the power of a neutron bomb. Jim, Kate and Silver reconcile and work together to fix Silver’s ship and prevent the Centurion, filled with the most evil pirates in the galaxy, from going on an insane robbing-and-killing spree. At the last second, Silver reluctantly gives up his “retirement fund” in order to destroy the Centurion, with Ironbeard and all the pirates on board.",
+        "Silver again parts from Jim and Kate, telling them to take care of each other. A few years later, Jim and Kate graduate with honors, while a proud Silver secretly watches from the shadows, smiling.",
+    ];
+    chapters: Array<{}> = [];
 }
