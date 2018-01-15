@@ -1,8 +1,10 @@
 import * as React from "react";
-import { StyleSheet, View, Button, Text, TextInput } from "react-native";
+import { StyleSheet, View, Button, Text, TouchableOpacity } from "react-native";
 
 export interface IOutlinePointProps {
+    index: number;
     text: string;
+    onEditOutline: Function
 }
 
 export const OutlinePointStyles = StyleSheet.create({
@@ -30,19 +32,27 @@ export const OutlinePointStyles = StyleSheet.create({
 export class OutlinePoint extends React.Component<IOutlinePointProps> {
     render() {
         return (
-            <View style={OutlinePointStyles.root}>
+            <View
+                style={OutlinePointStyles.root}
+            >
                 {/* TEXT */}
-                <Text style={OutlinePointStyles.__text}>{this.props.text}</Text>
+                <TouchableOpacity
+                    onLongPress={() => {this.props.onEditOutline(this.props.index)}}
+                >
+                    <Text style={OutlinePointStyles.__text}>
+                        {this.props.text}
+                    </Text>
+                </TouchableOpacity>
                 {/* REMOVE/ADD */}
                 <View style={OutlinePointStyles.__controls}>
-                    <Button 
+                    {/* <Button 
                         title="-"
                         onPress={() => {console.log("remove card")}}
                     />
                     <Button 
                         title="+"
                         onPress={() => {console.log("add card")}}
-                    />
+                    /> */}
                 </View>
             </View>
         );

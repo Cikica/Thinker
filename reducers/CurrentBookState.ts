@@ -10,5 +10,6 @@ export class CurrentBookState {
         "Silver has a very dangerous cargo with him that he had been trying to smuggle and sell for a fortune, which has the power of a neutron bomb. Jim, Kate and Silver reconcile and work together to fix Silver’s ship and prevent the Centurion, filled with the most evil pirates in the galaxy, from going on an insane robbing-and-killing spree. At the last second, Silver reluctantly gives up his “retirement fund” in order to destroy the Centurion, with Ironbeard and all the pirates on board.",
         "Silver again parts from Jim and Kate, telling them to take care of each other. A few years later, Jim and Kate graduate with honors, while a proud Silver secretly watches from the shadows, smiling.",
     ];
+    outlineInEdit: number|null = null;
     chapters: Array<{}> = [];
 }

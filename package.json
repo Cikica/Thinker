@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "@types/react-redux": "^5.0.14",
     "@types/react": "^16.0.34",
+    "@types/react-redux": "^5.0.14",
     "jest-expo": "23.0.0",
     "react-native-scripts": "1.8.1",
     "react-native-typescript-transformer": "^1.1.4",
@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "expo": "^23.0.4",
+    "ramda": "^0.25.0",
     "react": "16.0.0",
     "react-native": "0.50.3"
   }
