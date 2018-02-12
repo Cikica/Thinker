@@ -4,9 +4,9 @@ import { connect, Dispatch } from "react-redux";
 
 import { IState } from "./../reducers/RootReducer";
 
-import { EditOutlineAction, IEditOutlineAction } from "./../actions/EditOutlineAction";
+import { BookActionEditOutline, IBookActionEditOutline } from "./BookActionEditOutline";
 
-import BookOutlineEditContainer from "./../containers/BookOutlineEditContainer";
+import BookContainerOutlineEdit from "./BookContainerOutlineEdit";
 import { OutlinePoint } from "./../components/OutlinePoint";
 
 
@@ -39,7 +39,7 @@ interface IBookContainerStateProps {
 };
 
 interface IBookContainerDispatchProps {
-    eidtOutlinePoint: (pointIndex:number) => IEditOutlineAction;
+    eidtOutlinePoint: (pointIndex:number) => IBookActionEditOutline;
 };
 
 let MapStateToProps = (state: IState): IBookContainerStateProps => {
@@ -51,11 +51,11 @@ let MapStateToProps = (state: IState): IBookContainerStateProps => {
 
 let MapDispatchToProps = (dispatch: Dispatch<IState>): IBookContainerDispatchProps => {
     return {
-        eidtOutlinePoint: (pointIndex) => dispatch(EditOutlineAction(pointIndex))
+        eidtOutlinePoint: (pointIndex) => dispatch(BookActionEditOutline(pointIndex))
     };
 }
 
-export class BookContainer extends React.Component<IBookContainer, {}> {
+export class BookScreen extends React.Component<IBookContainer, {}> {
 
     constructor(props) {
         super(props);
@@ -73,7 +73,7 @@ export class BookContainer extends React.Component<IBookContainer, {}> {
                             onPress={() => {console.log("add outline point")}}
                         />
                     </View> */}
-                    {/* DESCRIPTION */}
+                    {/* OUTLINES */}
                     {this.props.outline.map((outlinePoint:string, index) =>
                         <OutlinePoint 
                             key={index}
@@ -83,8 +83,9 @@ export class BookContainer extends React.Component<IBookContainer, {}> {
                         />
                     )}
                 </ScrollView>
+                {/* CHAPTERS/OUTLINE EDIT */}
                 <View style={BookStyles.__chapters}>
-                    <BookOutlineEditContainer/>
+                    <BookContainerOutlineEdit/>
                 </View>
             </View>
         );
@@ -94,4 +95,4 @@ export class BookContainer extends React.Component<IBookContainer, {}> {
 export default connect(
     MapStateToProps,
     MapDispatchToProps,
-)(BookContainer);
+)(BookScreen);

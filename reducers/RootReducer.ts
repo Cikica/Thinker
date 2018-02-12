@@ -1,14 +1,14 @@
 import { combineReducers, Reducer } from "redux";
 
-import { CurrentBookState } from "./CurrentBookState";
-import { CurrentBookReducer } from "./CurrentBookReducer";
+import BookState from "./../screenBook/BookState";
+import BookReducer from "./../screenBook/BookReducer";
 
 export interface IState {
-    CurrentBook: CurrentBookState
+    CurrentBook: BookState
 }
 
 export function MakeRootReducer(): Reducer<IState> {
     return combineReducers<IState>({
-        CurrentBook: CurrentBookReducer
+        CurrentBook: BookReducer
     });
 }

@@ -28,12 +28,15 @@ export const BookOutlineEditStyles = StyleSheet.create({
 
 interface IBookOutlineEditContainer extends IBookOutlineEditContainerStateProps, IBookOutlineEditContainerDispatchProps {};
 
-interface IBookOutlineEditContainerStateProps {};
+interface IBookOutlineEditContainerStateProps {
+    text: string;
+};
 
 interface IBookOutlineEditContainerDispatchProps {};
 
 let MapStateToProps = (state: IState): IBookOutlineEditContainerStateProps => {
     return {
+        text: state.CurrentBook.outline[state.CurrentBook.outlineInEdit]
     };
 }
 
@@ -42,13 +45,10 @@ let MapDispatchToProps = (dispatch: Dispatch<IState>): IBookOutlineEditContainer
     };
 }
 
-export class BookOutlineEditContainer extends React.Component<IBookOutlineEditContainer, {}> {
+export class BookContainerOutlineEdit extends React.Component<IBookOutlineEditContainer, {}> {
 
     constructor(props) {
         super(props);
-        this.state = {
-            text: "",
-        }
     }
 
     render() {
@@ -64,7 +64,7 @@ export class BookOutlineEditContainer extends React.Component<IBookOutlineEditCo
                     <TextInput
                         style={BookOutlineEditStyles.__input}
                         multiline={true}
-                        value={this.state.text}
+                        value={this.props.text}
                         onChangeText={(text) => {this.setState({text})}}
                     />
                 </View>
@@ -76,4 +76,4 @@ export class BookOutlineEditContainer extends React.Component<IBookOutlineEditCo
 export default connect(
     MapStateToProps,
     MapDispatchToProps,
-)(BookOutlineEditContainer);
+)(BookContainerOutlineEdit);

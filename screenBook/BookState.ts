@@ -1,6 +1,6 @@
-export class CurrentBookState {
+export default class BookState {
     title: string = "Treasure Planet";
-    outline: Array<string> = [
+    outline: string[] = [
         "The sequel was to pick up where the first film left off, with Jim Hawkins going to the Royal Interstellar Academy. At the Academy, he is a hotshot “natural,” but he doesn’t follow the rules very well. Hence, he gets off to a shaky start – especially with his classmate Kate, who is very smart and has a type A personality. Kate’s father is Admiral Blake, the Commander of the Navy. Jim and Kate vie for top of the class but have very different skills.",
         "Captain Amelia is dean of the Academy, which has a brand-new vessel: the Centurion. Designed by Doctor Doppler, the Centurion is the fastest ship in the galaxy. B.E.N. is its pilot.",
         "The pirate Ironbeard desires to commandeer the Centurion. This ruthless villain is relatively all iron – almost nothing of whom he originally was, inside and out, is left. He leads a group of pirates to hijack the Centurion while Jim and Kate are aboard. The Navy can’t catch the Centurion, due to the vessel’s speed and armor. Jim and Kate escape the Centurion. Jim decides he needs a pirate to help catch pirates. They find his old buddy Long John Silver in the Lagoon Nebula, where he is running a smuggling ring. Silver agrees to help when he hears about the Centurion. Jim and Kate receive a tracking signal from B.E.N. – who is currently hostage aboard the Centurion – and follow via Silver’s creaky vessel. They discover the Centurion docked near the Botany Bay Prison Asteroid.",

@@ -4,8 +4,7 @@ import { StyleSheet, View, Text } from "react-native";
 
 import { MakeStore } from "./Store";
 
-import BookOutlineEditContainer from "./containers/BookOutlineEditContainer";
-import BookContainer from "./containers/BookContainer";
+import BookScreen from "./screenBook/BookScreen";
 
 const styles = StyleSheet.create({
     container: {
@@ -28,8 +27,7 @@ export default class App extends React.Component {
         return (
             <Provider store={store}>
                 <View style={styles.container}>
-                    {/* <BookOutlineEditContainer/> */}
-                    <BookContainer/>
+                    <BookScreen/>
                 </View>
             </Provider>
         );
