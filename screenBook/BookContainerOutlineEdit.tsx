@@ -4,6 +4,7 @@ import { connect, Dispatch } from "react-redux";
 
 import { IState } from "./../reducers/RootReducer";
 import { BookActionTypeOutlineText, IBookActionTypeOutlineText } from "./BookActionTypeOutlineText";
+import { BookActionSaveOutlineEdit, IBookActionSaveOutlineEdit } from "./BookActionSaveOutlineEdit";
 
 export const BookOutlineEditStyles = StyleSheet.create({
     root: {
@@ -34,6 +35,7 @@ interface IBookOutlineEditContainerStateProps {
 
 interface IBookOutlineEditContainerDispatchProps {
     typeInOutline: (text:string) => IBookActionTypeOutlineText;
+    saveOutlineChanges: () => IBookActionSaveOutlineEdit;
 };
 
 let MapStateToProps = (state: IState): IBookOutlineEditContainerStateProps => {
@@ -45,6 +47,7 @@ let MapStateToProps = (state: IState): IBookOutlineEditContainerStateProps => {
 let MapDispatchToProps = (dispatch: Dispatch<IState>): IBookOutlineEditContainerDispatchProps => {
     return {
         typeInOutline: (text:string) => dispatch(BookActionTypeOutlineText(text)),
+        saveOutlineChanges: () => dispatch(BookActionSaveOutlineEdit()),
     };
 }
 
@@ -59,8 +62,8 @@ export class BookContainerOutlineEdit extends React.Component<IBookOutlineEditCo
             <View style={BookOutlineEditStyles.root}>
                 <View style={BookOutlineEditStyles.__controls}>
                     <Button
-                        title={"Done"}
-                        onPress={() => {console.log("onOutlineEditDonePress")}}
+                        title={"Save"}
+                        onPress={this.props.saveOutlineChanges}
                     />
                 </View>
                 <View style={BookOutlineEditStyles.__content}>
