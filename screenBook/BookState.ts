@@ -11,5 +11,6 @@ export default class BookState {
         "Silver again parts from Jim and Kate, telling them to take care of each other. A few years later, Jim and Kate graduate with honors, while a proud Silver secretly watches from the shadows, smiling.",
     ];
     outlineInEdit: number|null = null;
+    outlineInEditText: string|null = null;
     chapters: Array<{}> = [];
 }

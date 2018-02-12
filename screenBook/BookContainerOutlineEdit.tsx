@@ -3,6 +3,7 @@ import { StyleSheet, View, ScrollView, Button, TextInput, Text } from "react-nat
 import { connect, Dispatch } from "react-redux";
 
 import { IState } from "./../reducers/RootReducer";
+import { BookActionTypeOutlineText, IBookActionTypeOutlineText } from "./BookActionTypeOutlineText";
 
 export const BookOutlineEditStyles = StyleSheet.create({
     root: {
@@ -22,7 +23,6 @@ export const BookOutlineEditStyles = StyleSheet.create({
         width: 650,
         fontSize: 20,
         textAlign: "center",
-        fontStyle: "italic",
     }
 });
 
@@ -32,16 +32,19 @@ interface IBookOutlineEditContainerStateProps {
     text: string;
 };
 
-interface IBookOutlineEditContainerDispatchProps {};
+interface IBookOutlineEditContainerDispatchProps {
+    typeInOutline: (text:string) => IBookActionTypeOutlineText;
+};
 
 let MapStateToProps = (state: IState): IBookOutlineEditContainerStateProps => {
     return {
-        text: state.CurrentBook.outline[state.CurrentBook.outlineInEdit]
+        text: state.CurrentBook.outlineInEditText,
     };
 }
 
 let MapDispatchToProps = (dispatch: Dispatch<IState>): IBookOutlineEditContainerDispatchProps => {
     return {
+        typeInOutline: (text:string) => dispatch(BookActionTypeOutlineText(text)),
     };
 }
 
@@ -65,7 +68,7 @@ export class BookContainerOutlineEdit extends React.Component<IBookOutlineEditCo
                         style={BookOutlineEditStyles.__input}
                         multiline={true}
                         value={this.props.text}
-                        onChangeText={(text) => {this.setState({text})}}
+                        onChangeText={this.props.typeInOutline}
                     />
                 </View>
             </View>
